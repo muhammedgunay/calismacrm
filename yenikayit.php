@@ -23,7 +23,7 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 
 
 
-<form method="post" action="k_ekle.php">
+<form method="post" action="k_ekle.php" style="margin-left: 5px; margin-right: 5px; margin-top: 10px; ">
 
 	<div class="input-group mb-3">
 

@@ -1,7 +1,7 @@
 <?php
 include ('fonksiyon.php');
 
-$gelenid=$_GET["id"];
+$gelenid=$_GET["kid"];
 echo $gelenid;
 
 /*

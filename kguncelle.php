@@ -1,5 +1,6 @@
 <?php
 include ('fonksiyon.php');
+include "header.php";
 
 $gelenid=$_GET["id"];
 echo $gelenid;
@@ -52,3 +53,4 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
 
 </form>
+

@@ -24,19 +24,17 @@
 
 
       	 <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="login.php">giriş yap</a>
+          <a class="nav-link active" aria-current="page" href="login.php">Giriş Yap</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="kullanici.php">müşterileri listele</a>
+          <a class="nav-link active" aria-current="page" href="kullanici.php">Müşterileri Listele</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link bg-primary" href="yenikayit.php">müsteri ekle</a>
-        </li>
+      
 
         <li class="nav-item">
-          <a class="nav-link active" href="kurum.php"> Kurum </a>
+          <a class="nav-link active" href="kurum.php"> Kurumları Listele </a>
         </li>
         
         <li class="nav-item dropdown">

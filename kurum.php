@@ -12,7 +12,6 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 	@header("location:login.php");
 }
 
-$sec =mysqli_query(connect(),"select * from kurum");
 
 ?>
 
@@ -30,14 +29,9 @@ $sec =mysqli_query(connect(),"select * from kurum");
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-<form method="post" action="kurumyeni.php">
-    
-    <div class="input-group mb-3">
-      <button class="btn btn-primary" type="submit">krum ekle</button>
-    </div>
-</form>
 
-
+<!--
+  $sec =mysqli_query(connect(),"select * from kurum");
 <?php 
 while ($al=mysqli_fetch_assoc($sec)) {
 
@@ -50,33 +44,64 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
 	# code...?>
 
-<div class="container-fluid bg-info">
-<p> id:<?= $alid ."=".$aladi." ". $altel  ?></p>
-<p> i<?=  $aladres." ".$alvergi." ". $alaciklama  ?></p>
-</div>
-
-
-<div class="container ">
-
-  
-  
-  <a href="kurumsil.php?id=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">
-  		sil</a>
-  	
-  <a href="kurumguncel.php?id=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
-  		güncelle</a>
-  		
-
-</div>
-
-<hr>
-
 
 <?php }?>
+-->
+
+<table class="table align-middle">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">adı</th>     
+      <th scope="col">telefon</th>
+      <th scope="col">adres</th>
+      <th scope="col">vergi no</th>
+      <th scope="col">açıklama</th>
+      <th scope="col">
+        <form method="post" action="kurumyeni.php">
+          <div class="input-group mb-3">
+
+            <button class="btn btn-primary" type="submit">kurum ekle</button>
+          </div>
+        </form>
+      </th>
+    </tr>
+
+  </thead>
+  <tbody>
+
+<?php 
+          $listcomp= mysqli_query(connect(),"select * from kurum");
+          while($asssocWhile=mysqli_fetch_assoc($listcomp)){
+          $alid=$asssocWhile["kid"];
+            
+           ?> 
+           <tr class="align-top">
+      <th scope="row"><?php echo  $asssocWhile['kid']; ?></th>
+  
+      <td><?php echo  $asssocWhile['k_adi']; ?></td>
+      <td><?php echo  $asssocWhile['telefon']; ?></td>
+      <td><?php echo  $asssocWhile['adresi']; ?></td>
+      <td><?php echo  $asssocWhile['vergino']; ?></td>
+      <td><?php echo  $asssocWhile['aciklama']; ?></td>
+      <td>  <a href="kurumguncel.php?kid=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
+      güncelle</a>
+       <a href="kurumsil.php?kid=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">
+      sil</a>
+      </td>
+          
+        
+           <?php }?> 
+
+
+
+    </tr>
+
+  </tbody>
+</table>
 
 
 </body>
 </html>
-
 
 
