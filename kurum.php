@@ -12,7 +12,7 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 	@header("location:login.php");
 }
 
-$sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kurum_id=kurum.kid");
+$sec =mysqli_query(connect(),"select * from kurum");
 
 ?>
 
@@ -30,22 +30,29 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
 
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
+<form method="post" action="kurumyeni.php">
+    
+    <div class="input-group mb-3">
+      <button class="btn btn-primary" type="submit">krum ekle</button>
+    </div>
+</form>
+
 
 <?php 
 while ($al=mysqli_fetch_assoc($sec)) {
 
-	$alid=$al["id"];
-	$aladi=$al["adi"];
-	$alsoyadi=$al["soyadi"];
+	$alid=$al["kid"];
+	$aladi=$al["k_adi"];
   $altel=$al["telefon"];
-  $aladres=$al["adres"];
-  $alkurumid=$al["k_adi"];
+  $aladres=$al["adresi"];
+  $alaciklama=$al["aciklama"];
+  $alvergi=$al["vergino"];
 
 	# code...?>
 
 <div class="container-fluid bg-info">
-<p> id:<?= $alid ."=".$aladi." ". $alsoyadi  ?></p>
-<p> i<?= $altel ." ".$aladres." ". $alkurumid  ?></p>
+<p> id:<?= $alid ."=".$aladi." ". $altel  ?></p>
+<p> i<?=  $aladres." ".$alvergi." ". $alaciklama  ?></p>
 </div>
 
 
@@ -53,11 +60,10 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
   
   
-  <a href="ksil.php?id=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">
+  <a href="kurumsil.php?id=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">
   		sil</a>
-
   	
-  <a href="kguncelle.php?id=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
+  <a href="kurumguncel.php?id=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
   		güncelle</a>
   		
 

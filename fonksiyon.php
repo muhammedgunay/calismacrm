@@ -19,6 +19,7 @@ function carp($deger1,$deger2){
 
 
 function connect(){
+
 $host="localhost";
 $kadi="root";
 $sifre="";
@@ -29,5 +30,10 @@ $baglan->set_charset("utf8");
 return $baglan;
 }
 
-
+function dd($dd){
+	return var_dump($dd);
+}
+function d($dd){
+	return print_r($dd);
+}
 ?>

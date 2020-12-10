@@ -1,22 +1,27 @@
 <?php
 
-$gelenid=$_GET["id"];
+include 'fonksiyon.php';
+
 $gelenadi=$_GET["gadi"];
 $gelensoyadi=$_GET["gsoyadi"];
+$gelentel=$_GET["gtel"];
+$gelenadres=$_GET["gadres"];
+$gelenkurum=$_GET["gkurum"];
 $gelenid2=$_GET["gid"];
-echo $gelenid." ". $gelenadi." ".$gelenid2;
 
-$host="localhost";
-$kadi="root";
-$sifre="";
-$vt="calisma";
+echo $gelenkurum;
 
-$baglan=mysqli_connect($host,$kadi,$sifre,$vt);
+echo  $gelenadres." ". $gelenkurum." ". $gelentel." ". $gelenadi." ".$gelenid2;
 
-$sil=mysqli_query($baglan, "update kullanici set adi='$gelenadi',soyadi='$gelensoyadi' 
-	where id='$gelenid2'");
-if ($sil) {
+
+
+$guncelle=mysqli_query(connect(), "update kullanici set adi='$gelenadi',soyadi='$gelensoyadi'
+	,telefon='$gelentel',adres='$gelenadres',kurum_id='$gelenkurum' where id='$gelenid2'");
+if ($guncelle) {
 	echo "başarılı";
 	@header("location:kullanici.php");
+}else  {
+	echo "güncellenemedi";
+	# code...
 } 
 ?>
