@@ -48,16 +48,17 @@ while ($al=mysqli_fetch_assoc($sec)) {
 <?php }?>
 -->
 
-<table class="table align-middle">
+<table class="table align-middle  table-striped">
   <thead>
     <tr>
-      <th scope="col">id</th>
-      <th scope="col">adı</th>     
-      <th scope="col">telefon</th>
-      <th scope="col">adres</th>
-      <th scope="col">vergi no</th>
-      <th scope="col">açıklama</th>
-      <th scope="col">
+      <th scope="col" class="table-info">id</th>
+      <th scope="col"class="table-info">adı</th>     
+      <th scope="col"class="table-info">telefon</th>
+      <th scope="col"class="table-info">adres</th>
+      <th scope="col" class="table-info">vergi no</th>
+      <th scope="col" class="w-25 table-info">açıklama</th>
+      <th scope="col"class="table-info">e posta</th>
+      <th scope="col"class="table-info">
         <form method="post" action="kurumyeni.php">
           <div class="input-group mb-3">
 
@@ -84,6 +85,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
       <td><?php echo  $asssocWhile['adresi']; ?></td>
       <td><?php echo  $asssocWhile['vergino']; ?></td>
       <td><?php echo  $asssocWhile['aciklama']; ?></td>
+        <td><?php echo  $asssocWhile['eposta']; ?></td>
       <td>  <a href="kurumguncel.php?kid=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
       güncelle</a>
        <a href="kurumsil.php?kid=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">

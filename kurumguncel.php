@@ -1,5 +1,6 @@
 <?php
 include ('fonksiyon.php');
+include 'header.php';
 
 $gelenid=$_GET["kid"];
 echo $gelenid;
@@ -23,12 +24,21 @@ while ($al=mysqli_fetch_assoc($sec)) {
  	$aladres=$al["adresi"];
 	$alaciklama=$al["aciklama"];
 	$alvergi=$al["vergino"];
+	$alilgili=$al["ilgili"];
+	$alreferansmusteri=$al["referansmusteri"];
+	$alsehir=$al["sehir_id"];
+	$altipi=$al["musteritipi"];
+	$alresmiadi=$al["resmiadi"];
+	$alfirmakodu=$al["firmakodu"];
+	$alulke=$al["ulke_id"];
+	$alpostakodu=$al["postakodu"];
+	$aleposta=$al["eposta"];
 
 
 
 }
 ?>
-
+<!--
 <form method="get" action="kurumguncelonay.php">
 	<input type="text" name="gadi" value="<?= $aladi?>">
 	<input type="text" name="gtel" value="<?= $altel?>">
@@ -42,4 +52,140 @@ while ($al=mysqli_fetch_assoc($sec)) {
  <input type="submit" value="gonder"> </a>
 
 
+</form>
+-->
+
+
+<form method="get" action="kurumguncelonay.php" style="margin-top: 5px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 bg-light">
+
+	<div class="input-group mb-3">
+
+		<span class="input-group-text">kurum adını giriniz:</span>
+    	<input type="text" class="form-control" value="<?= $aladi?>"  name="gadi">
+  	</div>
+  	<div class="input-group mb-3">
+  		<span class="input-group-text">kurum adresini giriniz:</span>
+  		<input type="text" class="form-control" value="<?= $aladres?>"  name="gadres">
+  	</div>
+
+  		<div class="input-group mb-3">
+
+		<span class="input-group-text">kurum telefonu giriniz:</span>
+    	<input type="text" class="form-control" value="<?= $altel?>"  name="gtelefon">
+  	</div>
+  	<div class="input-group mb-3">
+  		<span class="input-group-text">kurum vergi no giriniz:</span>
+  		<input type="text" class="form-control" value="<?= $alvergi?>"  name="gvergi">
+  	</div>
+<div class="input-group mb-3">
+      <span class="input-group-text">kurum açıklamasını giriniz:</span>
+      <input type="text" class="form-control" value="<?= $alaciklama?>"  name="gaciklama">
+    </div>
+</div>
+<div class="col-4 bg-light">
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">ilgili:</span>
+      <input type="text" class="form-control" value="<?= $alilgili?>"  name="gilgili">
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Referans müşteri giriniz:</span>
+      <input type="text" class="form-control" value="<?= $alreferansmusteri?>"  name="greferans">
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Ülke Seçiniz:</span>
+      <select name="gulke"> <!-- s elect name si ile çağrılır optıonslar ise value ile aktalırılır.-->
+                    <?php 
+                    $listcomp= mysqli_query(connect(),"SELECT u_id,ulke from ulkeler");
+                    while($asssocWhile=mysqli_fetch_assoc($listcomp)){
+            
+            
+                    ?> 
+          
+          <option value="<?php echo $asssocWhile['u_id']; ?>"><?php echo  $asssocWhile['ulke']; ?></option>
+          
+        
+          <?php }?> 
+     </select>
+    
+
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Şehir seçiniz:</span>
+                  <select name="gsehir"> <!-- s elect name si ile çağrılır optıonslar ise value ile aktalırılır.-->
+                    <?php 
+                    $listcomp= mysqli_query(connect(),"SELECT s_id,sehir from sehir");
+                    while($asssocWhile=mysqli_fetch_assoc($listcomp)){
+            
+            
+                  ?> 
+          
+          <option value="<?php echo $asssocWhile['s_id']; ?>"><?php echo  $asssocWhile['sehir']; ?></option>
+          
+        
+           <?php }?> 
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Müşteri tipini giriniz:</span>
+      <input type="text" class="form-control" value="<?= $altipi?>"  name="gtipi">
+    </div>  
+
+
+</div>
+
+<div class="col-4 bg-light">
+
+
+    <div class="input-group mb-3">
+      <span class="input-group-text"> Kurum resmi adını giriniz:</span>
+      <input type="text" class="form-control" value="<?= $alresmiadi?>"  name="gkurumresmi">
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Kurum kodunu giriniz:</span>
+      <input type="text" class="form-control" value="<?= $alfirmakodu?>"  name="gkurumkod">
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Posta kodu seçiniz:</span>
+     
+
+      <select name="gpostakodu">
+        <?php
+        for ($i=1; $i <82 ; $i+=1) { ?>
+           
+           <option value="<?php echo $i ?>"><?php echo $i ?> 0000</option>
+       
+       <?php }?>
+      </select>
+
+    </div>
+
+    <div class="input-group mb-3">
+      <span class="input-group-text">Eposta adrsini giriniz:</span>
+      <input type="text" class="form-control" value="<?= $aleposta?>"  name="geposta">
+    </div>
+  
+  
+  
+  <input type="text" name="gid" value="<?= $alid?>" style="display: none;">
+
+  		
+  	<div class="input-group mb-3">
+  		<button class="btn btn-dark" type="submit">güncellemeyi tamamla</button>
+  	</div>
+			
+
+
+      </div>
+      </div>
+</div>
 </form>
