@@ -16,7 +16,7 @@ echo  $gelenadres." ". $gelenkurum." ". $gelentel." ". $gelenadi." ".$gelenid2;
 
 
 $guncelle=mysqli_query(connect(), "update kullanici set adi='$gelenadi',soyadi='$gelensoyadi'
-	,telefon='$gelentel',adres='$gelenadres',kurum_id='$gelenkurum' where id='$gelenid2'");
+	,ktelefon='$gelentel',adres='$gelenadres',kurum_id='$gelenkurum' where id='$gelenid2'");
 if ($guncelle) {
 	echo "başarılı";
 	@header("location:kullanici.php");

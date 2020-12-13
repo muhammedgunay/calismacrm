@@ -7,21 +7,21 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 $sec =mysqli_query(connect(),"select * from sehir");
 
 ?>
-
+<div class="container">
 <form method="post" action="sehirekle.php" style="margin-left: 5px; margin-right: 5px; margin-top: 10px; ">
 
-	<div class="input-group mb-3">
+	<div  class="container input-group mb-3">
 
 		<span class="input-group-text">sehir adını giriniz:</span>
     	<input type="text" class="form-control" placeholder="Şehir Ekle" name="sehir">
   	</div>
   	
-  		
+		
 
   	<div class="input-group mb-3" style="margin-left: 1000px;">
   		<button class="btn btn-primary" type="submit">Yeni Şehir Ekle</button>
   	</div>
-			
+	</form>		
 
 </form>
 
@@ -49,9 +49,9 @@ $sec =mysqli_query(connect(),"select * from sehir");
   
       <td class="table-warning"><?php echo  $asssocWhile['sehir']; ?></td>
       
-      <td class="table-warning">  <a href="sehirguncelle.php?id=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
+      <td class="table-warning">  <a href="sehirguncelle.php?id=<?=$alid?>" class="btn btn-warning" role="submit" aria-pressed="true">
       güncelle</a>
-       <a href="sehirsil.php?id=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">
+       <a href="sehirsil.php?id=<?=$alid?>" class="btn btn-danger" role="submit" aria-pressed="true">
       sil</a>
       </td>
           
@@ -64,3 +64,4 @@ $sec =mysqli_query(connect(),"select * from sehir");
 
   </tbody>
 </table>
+</div>

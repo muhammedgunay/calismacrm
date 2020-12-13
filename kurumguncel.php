@@ -55,8 +55,19 @@ while ($al=mysqli_fetch_assoc($sec)) {
 </form>
 -->
 
+<style type="text/css">
+	h1{
+		
+		text-shadow: rgba(155,155,155) 15px 15px 15px;
+		display: -webkit-box;
+		-webkit-box-pack:center;
+		
+	}
+</style>
+
 
 <form method="get" action="kurumguncelonay.php" style="margin-top: 5px;">
+	<h1>Kurum Güncelle</h1>
   <div class="container">
     <div class="row">
       <div class="col-4 bg-light">
@@ -64,37 +75,37 @@ while ($al=mysqli_fetch_assoc($sec)) {
 	<div class="input-group mb-3">
 
 		<span class="input-group-text">kurum adını giriniz:</span>
-    	<input type="text" class="form-control" value="<?= $aladi?>"  name="gadi">
+    	<input type="text" class="form-control" value="<?= $aladi?>"  name="gadi" maxlength="250">
   	</div>
   	<div class="input-group mb-3">
   		<span class="input-group-text">kurum adresini giriniz:</span>
-  		<input type="text" class="form-control" value="<?= $aladres?>"  name="gadres">
+  		<input type="text" class="form-control" value="<?= $aladres?>"  name="gadres" maxlength="250">
   	</div>
 
   		<div class="input-group mb-3">
 
 		<span class="input-group-text">kurum telefonu giriniz:</span>
-    	<input type="text" class="form-control" value="<?= $altel?>"  name="gtelefon">
+    	<input type="text" class="form-control" value="<?= $altel?>"  name="gtelefon" maxlength="11">
   	</div>
   	<div class="input-group mb-3">
   		<span class="input-group-text">kurum vergi no giriniz:</span>
-  		<input type="text" class="form-control" value="<?= $alvergi?>"  name="gvergi">
+  		<input type="text" class="form-control" value="<?= $alvergi?>"  name="gvergi" maxlength="30">
   	</div>
 <div class="input-group mb-3">
       <span class="input-group-text">kurum açıklamasını giriniz:</span>
-      <input type="text" class="form-control" value="<?= $alaciklama?>"  name="gaciklama">
+      <input type="text" class="form-control" value="<?= $alaciklama?>"  name="gaciklama" maxlength="250">
     </div>
 </div>
 <div class="col-4 bg-light">
 
     <div class="input-group mb-3">
       <span class="input-group-text">ilgili:</span>
-      <input type="text" class="form-control" value="<?= $alilgili?>"  name="gilgili">
+      <input type="text" class="form-control" value="<?= $alilgili?>"  name="gilgili" maxlength="250">
     </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text">Referans müşteri giriniz:</span>
-      <input type="text" class="form-control" value="<?= $alreferansmusteri?>"  name="greferans">
+      <input type="text" class="form-control" value="<?= $alreferansmusteri?>"  name="greferans" maxlength="45">
     </div>
 
     <div class="input-group mb-3">
@@ -135,7 +146,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
     <div class="input-group mb-3">
       <span class="input-group-text">Müşteri tipini giriniz:</span>
-      <input type="text" class="form-control" value="<?= $altipi?>"  name="gtipi">
+      <input type="text" class="form-control" value="<?= $altipi?>"  name="gtipi" maxlength="50">
     </div>  
 
 
@@ -146,12 +157,12 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
     <div class="input-group mb-3">
       <span class="input-group-text"> Kurum resmi adını giriniz:</span>
-      <input type="text" class="form-control" value="<?= $alresmiadi?>"  name="gkurumresmi">
+      <input type="text" class="form-control" value="<?= $alresmiadi?>"  name="gkurumresmi" maxlength="250">
     </div>
 
     <div class="input-group mb-3">
       <span class="input-group-text">Kurum kodunu giriniz:</span>
-      <input type="text" class="form-control" value="<?= $alfirmakodu?>"  name="gkurumkod">
+      <input type="text" class="form-control" value="<?= $alfirmakodu?>"  name="gkurumkod" maxlength="250">
     </div>
 
     <div class="input-group mb-3">
@@ -171,7 +182,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
     <div class="input-group mb-3">
       <span class="input-group-text">Eposta adrsini giriniz:</span>
-      <input type="text" class="form-control" value="<?= $aleposta?>"  name="geposta">
+      <input type="text" class="form-control" value="<?= $aleposta?>"  name="geposta" maxlength="250">
     </div>
   
   
@@ -180,7 +191,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
   		
   	<div class="input-group mb-3">
-  		<button class="btn btn-dark" type="submit">güncellemeyi tamamla</button>
+  		<button class="btn btn-dark rounded-pill" type="submit">güncellemeyi tamamla</button>
   	</div>
 			
 

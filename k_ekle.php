@@ -27,7 +27,7 @@ $baglanveSec->set_charset("utf8"); */
 if ($_POST) {
 	# code...
 
-$ekle=mysqli_query(connect(),"insert into kullanici (adi,soyadi,telefon,adres,kurum_id) values ('$adi','$soyadi','$telefon','$adres','$kurum')");
+$ekle=mysqli_query(connect(),"insert into kullanici (adi,soyadi,ktelefon,adres,kurum_id) values ('$adi','$soyadi','$telefon','$adres','$kurum')");
 }
 if ($ekle) {
 	echo "başarılı";

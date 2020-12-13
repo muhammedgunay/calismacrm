@@ -7,7 +7,7 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 $sec =mysqli_query(connect(),"select * from ulke");
 
 ?>
-
+<div class="container">
 <form method="post" action="ulkeekle.php" style="margin-left: 5px; margin-right: 5px; margin-top: 10px; ">
 
 	<div class="input-group mb-3">
@@ -49,9 +49,9 @@ $sec =mysqli_query(connect(),"select * from ulke");
   
       <td class="table-warning"><?php echo  $asssocWhile['ulke']; ?></td>
       
-      <td class="table-warning">  <a href="ulkeguncelle.php?id=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
+      <td class="table-warning">  <a href="ulkeguncelle.php?id=<?=$alid?>" class="btn btn-warning" role="submit" aria-pressed="true">
       güncelle</a>
-       <a href="ulkesil.php?id=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">
+       <a href="ulkesil.php?id=<?=$alid?>" class="btn btn-danger" role="submit" aria-pressed="true">
       sil</a>
       </td>
           
@@ -64,3 +64,4 @@ $sec =mysqli_query(connect(),"select * from ulke");
 
   </tbody>
 </table>
+</div>

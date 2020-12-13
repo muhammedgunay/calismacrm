@@ -19,7 +19,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
-	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+	<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f1fd; ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">KUVARSSOFT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,31 +29,43 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
 
-      	 <li class="nav-item">
+      	 <li class="nav-item" style="background-color: #f1f1f1;">
           <a class="nav-link active" aria-current="page" href="login.php">Giriş Yap</a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item" style="background-color: #efffff;">
           <a class="nav-link active" aria-current="page" href="kullanici.php">Müşterileri Listele</a>
         </li>
 
       
 
-        <li class="nav-item">
+        <li class="nav-item"style="background-color: #f1f1f1;">
           <a class="nav-link active" href="kurum.php"> Kurumları Listele </a>
         </li>
         
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown" style="background-color: #efffff;">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Şehir-Ülke
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="sehir.php">Şehirler</a></li>
+            <li ><a class="dropdown-item" href="sehir.php">Şehirler</a></li>
             <li><a class="dropdown-item" href="ulke.php">Ülkeler</a></li>
-            <li><hr class="dropdown-divider"></li>
+           
             
           </ul>
         </li>
+
+          <li class="nav-item dropdown" style="background-color: #f1f1f1;">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Çıkıs Yap
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="cikisyap.php">Çıkış</a></li>
+            
+            
+          </ul>
+        </li>
+
 
         <li class="nav-item">
           <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>

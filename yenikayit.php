@@ -8,6 +8,18 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 <!DOCTYPE html>
 <html>
 <head>
+
+<style type="text/css">
+  h1{
+    
+    text-shadow: rgba(155,155,155) 15px 15px 15px;
+    display: -webkit-box;
+    -webkit-box-pack:center;
+    
+  }
+</style>
+
+
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,10 +33,10 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 </body>
 </html>
 
-
+<div class="container">
 
 <form method="post" action="k_ekle.php" style="margin-left: 5px; margin-right: 5px; margin-top: 10px; ">
-
+<h1>Müşteri Ekle</h1>
 	<div class="input-group mb-3">
 
 		<span class="input-group-text">müşteri adını giriniz:</span>
@@ -62,11 +74,17 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 				</select>
   	
   	</div>
+<input type="file" name="myfile">
 
   		
   	<div class="input-group mb-3">
-  		<button class="btn btn-primary" type="submit">kaydı tamamla</button>
+  		<button class="btn btn-primary rounded-pill" style="margin-top: 5px;" type="submit">kaydı tamamla</button>
   	</div>
 			
 
+
+
+
 </form>
+</div>
+

@@ -44,7 +44,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
 -->
 
-<table class="table">
+<table class="table table-hover">
   <thead>
     <tr>
       <th scope="col" class="table-info">id</th>
@@ -77,12 +77,12 @@ while ($al=mysqli_fetch_assoc($sec)) {
   
       <td class="table-warning"><?php echo  $asssocWhile['adi']; ?></td>
       <td class="table-warning"><?php echo  $asssocWhile['soyadi']; ?></td>
-      <td class="table-warning"><?php echo  $asssocWhile['telefon']; ?></td>
+      <td class="table-warning"><?php echo  $asssocWhile['ktelefon']; ?></td>
       <td class="table-warning"><?php echo  $asssocWhile['adres']; ?></td>
       <td class="table-warning"><?php echo  $asssocWhile['k_adi']; ?></td>
-      <td class="table-warning">  <a href="kguncelle.php?id=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
+      <td class="table-warning">  <a href="kguncelle.php?id=<?=$alid?>" class="btn btn-warning rounded-pill" role="submit" aria-pressed="true">
       güncelle</a>
-       <a href="ksil.php?id=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">
+       <a href="ksil.php?id=<?=$alid?>" class="btn btn-danger rounded-pill" role="submit" aria-pressed="true">
       sil</a>
       </td>
           

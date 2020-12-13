@@ -14,7 +14,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
 	$alid=$al["id"];
 	$aladi=$al["adi"];
 	$alsoyadi=$al["soyadi"];
-  	$altel=$al["telefon"];
+  	$altel=$al["ktelefon"];
  	$aladres=$al["adres"];
  	$alkurumid=$al["k_adi"];
 
@@ -28,13 +28,47 @@ while ($al=mysqli_fetch_assoc($sec)) {
  //d($sayi);
 ?>
 
-<form method="get" action="guncellemeonay.php">
-	<input type="text" name="gadi" value="<?= $aladi?>">
-	<input type="text" name="gsoyadi" value="<?= $alsoyadi?>">
-	<input type="text" name="gtel" value="<?= $altel?>">
-	<input type="text" name="gadres" value="<?= $aladres?>">
+<style type="text/css">
+	h1{
+		
+		text-shadow: rgba(155,155,155) 15px 15px 15px;
+		display: -webkit-box;
+		-webkit-box-pack:center;
+		
+	}
+</style>
 
+
+
+<form method="get" action="guncellemeonay.php" style="margin-top: 5px;">
+	<h1>Müşteri Güncelle</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12 bg-light">
+
+	<div class="input-group mb-3">
+
+		<span class="input-group-text">müşteri adını giriniz:</span>
+    	<input type="text" class="form-control" value="<?= $aladi?>"  name="gadi">
+  	</div>
+  	<div class="input-group mb-3">
+  		<span class="input-group-text">müşteri soyadını giriniz:</span>
+  		<input type="text" class="form-control" value="<?= $alsoyadi?>"  name="gsoyadi">
+  	</div>
+
+  		<div class="input-group mb-3">
+
+		<span class="input-group-text">müşteri telefonu giriniz:</span>
+    	<input type="text" class="form-control" value="<?= $altel?>"  name="gtel">
+  	</div>
+  	<div class="input-group mb-3">
+  		<span class="input-group-text">müşteri adrsini giriniz:</span>
+  		<input type="text" class="form-control" value="<?= $aladres?>"  name="gadres">
+  	</div>
+  	<div  class="input-group mb-3">
+  	  <span class="input-group-text">müşterinin kurumunu seçiniz:</span>
 	<select name="gkurum"> <!-- select name si ile çağrılır optıonslar ise value ile aktalırılır.-->
+
 	<?php 
 					$listcomp= mysqli_query(connect(),"SELECT kid,k_adi from kurum");
 					while($asssocWhile=mysqli_fetch_assoc($listcomp)){
@@ -47,10 +81,18 @@ while ($al=mysqli_fetch_assoc($sec)) {
 				
 					 <?php }?> 
 				</select>
-	<input type="text" name="gid" value="<?= $alid?>" style="display: none;">
-	
- <input type="submit" value="gonder"> </a>
+	</div>
+				<input type="text" name="gid" value="<?= $alid?>" style="display: none;">
+				 <div class="input-group mb-3">
+  		<button class="btn btn-dark rounded-pill" type="submit">güncellemeyi tamamla</button>
+  	</div>
+</div>
 
 
+			
+
+
+      </div>
+      </div>
 </form>
 

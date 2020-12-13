@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 11 Ara 2020, 20:21:02
+-- Üretim Zamanı: 13 Ara 2020, 17:38:05
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.3.21
 
@@ -32,19 +32,26 @@ CREATE TABLE IF NOT EXISTS `kullanici` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `adi` varchar(25) NOT NULL,
   `soyadi` varchar(25) NOT NULL,
-  `telefon` bigint(111) DEFAULT NULL,
+  `ktelefon` bigint(111) DEFAULT NULL,
   `adres` varchar(250) DEFAULT NULL,
   `kurum_id` int(11) DEFAULT NULL,
+  `name` varchar(500) DEFAULT NULL,
+  `type` varchar(250) DEFAULT NULL,
+  `data` blob,
   PRIMARY KEY (`id`),
   KEY `kurum_id` (`kurum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `kullanici`
 --
 
-INSERT INTO `kullanici` (`id`, `adi`, `soyadi`, `telefon`, `adres`, `kurum_id`) VALUES
-(35, 'yasin', 'bardak', 5381472582, 'laleli mah. necmi sk. no 26', 9);
+INSERT INTO `kullanici` (`id`, `adi`, `soyadi`, `ktelefon`, `adres`, `kurum_id`, `name`, `type`, `data`) VALUES
+(35, 'yasin', 'bardak', 5381155555, 'laleli mah. necmi sk. no 26 adana', 6, '', '', ''),
+(36, 'deniz', 'akin', 538111555, 'EMEK MAh falan fina', 8, '', '', ''),
+(40, 'yilmaz', 'aytekin', 538248, 'ismet pasa sok. no 23 kutahya', 10, '', '', ''),
+(41, 'yasemin', 'simsek', 111222555, '', 6, '', '', ''),
+(42, 'mehmet', 'yurt', 5382481410, 'uuuuu', 6, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -72,17 +79,17 @@ CREATE TABLE IF NOT EXISTS `kurum` (
   PRIMARY KEY (`kid`),
   KEY `sehir_id` (`sehir_id`),
   KEY `ulke_id` (`ulke_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `kurum`
 --
 
 INSERT INTO `kurum` (`kid`, `k_adi`, `adresi`, `telefon`, `vergino`, `aciklama`, `ilgili`, `referansmusteri`, `sehir_id`, `musteritipi`, `resmiadi`, `firmakodu`, `ulke_id`, `postakodu`, `eposta`) VALUES
-(6, 'oguz holding lt', 'teknokent antalya', 538111111, 1111111, 'mudur kendisi', '', '', 1, '', '', 0, 1, 1, ''),
-(8, 'kuvarssof', 'teknokent kutahya', 538111, 11111, 'falan filan falan filan falan filan falan filan falan filan falan filan falan filan falan filan alan filan falan filan falan filan falan filan falan filan falan filan falan filan', '', '', 1, '', '', 0, 1, 1, ''),
-(9, 'gurallar porselen', 'ogranize sanayi', 5481472222, 258147963, '', NULL, NULL, 1, NULL, NULL, 0, 1, 0, NULL),
-(10, 'yuotube', 'google', 222222, 11111, 'sirket', 'hoca', 'yok', 2, 'internet', 'google inc', 123456, 1, 6, 'google@com.com');
+(6, 'oguz holding ', 'teknokent antalya', 53822222, 1111111, 'mudur kendisi', '', '', 1, '', '', 0, 1, 1, 'yok'),
+(8, 'kuvarssof', 'teknokent kutahya', 538111, 11111, ' filan alan filan falan filan falan filan falan filan falan filan falan filan falan filan', 'oguz', 'oguz', 1, 'calisan', 'kuvarssoft', 555, 1, 1, 'kuvarssoft.com.com'),
+(10, 'yuotube', 'google', 222222, 11111, 'sirket', 'hoca', 'yok', 2, 'internet', 'google inc', 123456, 1, 6, 'google@com.com'),
+(11, 'tonvelet', 'teknokent kutahya', 5252581478, 123456789, '', '', 'yok', 1, 'yok', 'tenvelet kutahya', 123456, 1, 43, 'tonton@com.com');
 
 -- --------------------------------------------------------
 
@@ -117,7 +124,7 @@ CREATE TABLE IF NOT EXISTS `sehir` (
   `s_id` int(11) NOT NULL AUTO_INCREMENT,
   `sehir` varchar(11) NOT NULL,
   PRIMARY KEY (`s_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `sehir`
@@ -126,8 +133,13 @@ CREATE TABLE IF NOT EXISTS `sehir` (
 INSERT INTO `sehir` (`s_id`, `sehir`) VALUES
 (1, 'kutahya'),
 (2, 'bolu'),
-(4, 'antalya'),
-(10, '');
+(12, 'eskisehir'),
+(13, 'adana'),
+(14, 'izmir'),
+(15, 'istanbul'),
+(16, 'bursa'),
+(17, 'konya'),
+(18, 'afyon');
 
 -- --------------------------------------------------------
 
@@ -140,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `ulkeler` (
   `u_id` int(11) NOT NULL AUTO_INCREMENT,
   `ulke` varchar(45) NOT NULL,
   PRIMARY KEY (`u_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `ulkeler`
@@ -150,7 +162,10 @@ INSERT INTO `ulkeler` (`u_id`, `ulke`) VALUES
 (1, 'turkiye'),
 (2, 'rusya'),
 (3, 'fransa'),
-(4, 'italya');
+(7, 'italya'),
+(8, 'almanya'),
+(9, 'ispanya'),
+(10, 'ukrayna');
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar

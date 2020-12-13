@@ -22,7 +22,7 @@
 	
 
 
-	<div style="margin: 0 auto; margin-top: 150px; width: 300px; height: 300px;">
+	<div style="margin: 0 auto; margin-top: 150px; width: 300px; height: 300px;" >
 		<form method="post" action="logina.php">
 
 
@@ -35,11 +35,11 @@
   	<div class="input-group mb-3">
 
 		<span class="input-group-text bg-info">kullanıcı adı:</span>
-    	<input type="text" class="form-control" placeholder="kullanıcı adı" name="s">
+    	<input type="password" class="form-control" placeholder="kullanıcı adı" name="s">
   	</div>
 
   	<div class="input-group mb-3">
-  		<button class="btn btn-primary" type="submit">Giriş Yap</button>
+  		<button class="btn btn-primary rounded-pill" type="submit">Giriş Yap</button>
   	</div>
 
 	

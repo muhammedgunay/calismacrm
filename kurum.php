@@ -52,12 +52,12 @@ while ($al=mysqli_fetch_assoc($sec)) {
   <thead>
     <tr>
       <th scope="col" class="table-info">id</th>
-      <th scope="col"class="table-info">adı</th>     
-      <th scope="col"class="table-info">telefon</th>
-      <th scope="col"class="table-info">adres</th>
-      <th scope="col" class="table-info">vergi no</th>
-      <th scope="col" class="w-25 table-info">açıklama</th>
-      <th scope="col"class="table-info">e posta</th>
+      <th scope="col"class="table-info">Kurum adı</th>     
+      <th scope="col"class="table-info">Telefon</th>
+      <th scope="col"class="table-info">Adres</th>
+      <th scope="col" class="table-info">Vergi no</th>
+      <th scope="col" class="w-25  table-info ">Açıklama</th>
+      <th scope="col"class="table-info">E posta</th>
       <th scope="col"class="table-info">
         <form method="post" action="kurumyeni.php">
           <div class="input-group mb-3">
@@ -86,9 +86,9 @@ while ($al=mysqli_fetch_assoc($sec)) {
       <td><?php echo  $asssocWhile['vergino']; ?></td>
       <td><?php echo  $asssocWhile['aciklama']; ?></td>
         <td><?php echo  $asssocWhile['eposta']; ?></td>
-      <td>  <a href="kurumguncel.php?kid=<?=$alid?>" class="btn btn-warning" role="submit" data-bs-toggle="button">
+      <td>  <a href="kurumguncel.php?kid=<?=$alid?>" class="btn btn-warning rounded-pill" role="submit" aria-pressed="true">
       güncelle</a>
-       <a href="kurumsil.php?kid=<?=$alid?>" class="btn btn-danger" role="submit" data-bs-toggle="button">
+       <a href="kurumsil.php?kid=<?=$alid?>" class="btn btn-danger rounded-pill" role="submit" aria-pressed="true">
       sil</a>
       </td>
           
