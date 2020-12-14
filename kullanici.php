@@ -84,6 +84,8 @@ while ($al=mysqli_fetch_assoc($sec)) {
       güncelle</a>
        <a href="ksil.php?id=<?=$alid?>" class="btn btn-danger rounded-pill" role="submit" aria-pressed="true">
       sil</a>
+        <a href="bilgilistele.php?id=<?=$alid?>" class="btn btn-danger rounded-pill" role="submit" aria-pressed="true">
+      bilgiler</a>
       </td>
           
         

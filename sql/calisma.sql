@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1:3306
--- Üretim Zamanı: 13 Ara 2020, 17:38:05
+-- Üretim Zamanı: 14 Ara 2020, 10:27:46
 -- Sunucu sürümü: 5.7.31
 -- PHP Sürümü: 7.3.21
 
@@ -36,22 +36,20 @@ CREATE TABLE IF NOT EXISTS `kullanici` (
   `adres` varchar(250) DEFAULT NULL,
   `kurum_id` int(11) DEFAULT NULL,
   `name` varchar(500) DEFAULT NULL,
-  `type` varchar(250) DEFAULT NULL,
-  `data` blob,
   PRIMARY KEY (`id`),
   KEY `kurum_id` (`kurum_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=latin1;
 
 --
 -- Tablo döküm verisi `kullanici`
 --
 
-INSERT INTO `kullanici` (`id`, `adi`, `soyadi`, `ktelefon`, `adres`, `kurum_id`, `name`, `type`, `data`) VALUES
-(35, 'yasin', 'bardak', 5381155555, 'laleli mah. necmi sk. no 26 adana', 6, '', '', ''),
-(36, 'deniz', 'akin', 538111555, 'EMEK MAh falan fina', 8, '', '', ''),
-(40, 'yilmaz', 'aytekin', 538248, 'ismet pasa sok. no 23 kutahya', 10, '', '', ''),
-(41, 'yasemin', 'simsek', 111222555, '', 6, '', '', ''),
-(42, 'mehmet', 'yurt', 5382481410, 'uuuuu', 6, NULL, NULL, NULL);
+INSERT INTO `kullanici` (`id`, `adi`, `soyadi`, `ktelefon`, `adres`, `kurum_id`, `name`) VALUES
+(35, 'yasin', 'bardak', 5381155555, 'laleli mah. necmi sk. no 26 adana', 6, ''),
+(36, 'deniz', 'akin', 538111555, 'EMEK MAh falan fina', 8, ''),
+(40, 'yilmaz', 'aytekin', 538248, 'ismet pasa sok. no 23 kutahya', 10, ''),
+(48, 'mehmet', 'yurt', 538111111, 'pp', 6, ''),
+(49, 'mehmet', 'yurt', 5382481410, 'rtry', 6, '87ff80a8a00a91f6e365f4dcc79d484e_y.jpg');
 
 -- --------------------------------------------------------
 
@@ -86,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `kurum` (
 --
 
 INSERT INTO `kurum` (`kid`, `k_adi`, `adresi`, `telefon`, `vergino`, `aciklama`, `ilgili`, `referansmusteri`, `sehir_id`, `musteritipi`, `resmiadi`, `firmakodu`, `ulke_id`, `postakodu`, `eposta`) VALUES
-(6, 'oguz holding ', 'teknokent antalya', 53822222, 1111111, 'mudur kendisi', '', '', 1, '', '', 0, 1, 1, 'yok'),
+(6, 'oguz holding ', 'teknokent antalya', 53822222, 1111111, 'isler yapilacak', '', '', 1, '', '', 0, 1, 1, 'yok'),
 (8, 'kuvarssof', 'teknokent kutahya', 538111, 11111, ' filan alan filan falan filan falan filan falan filan falan filan falan filan falan filan', 'oguz', 'oguz', 1, 'calisan', 'kuvarssoft', 555, 1, 1, 'kuvarssoft.com.com'),
 (10, 'yuotube', 'google', 222222, 11111, 'sirket', 'hoca', 'yok', 2, 'internet', 'google inc', 123456, 1, 6, 'google@com.com'),
 (11, 'tonvelet', 'teknokent kutahya', 5252581478, 123456789, '', '', 'yok', 1, 'yok', 'tenvelet kutahya', 123456, 1, 43, 'tonton@com.com');

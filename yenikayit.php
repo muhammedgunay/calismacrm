@@ -35,7 +35,7 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 
 <div class="container">
 
-<form method="post" action="k_ekle.php" style="margin-left: 5px; margin-right: 5px; margin-top: 10px; ">
+<form method="post" action="k_ekle.php" enctype="multipart/form-data" style="margin-left: 5px; margin-right: 5px; margin-top: 10px; ">
 <h1>Müşteri Ekle</h1>
 	<div class="input-group mb-3">
 
@@ -74,7 +74,7 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 				</select>
   	
   	</div>
-<input type="file" name="myfile">
+<input type="file" name="fileToUpload" id="fileToUpload">
 
   		
   	<div class="input-group mb-3">
