@@ -107,3 +107,4 @@ while ($al=mysqli_fetch_assoc($sec)) {
 </html>
 
 
+<?php include 'footer.php'; ?> 

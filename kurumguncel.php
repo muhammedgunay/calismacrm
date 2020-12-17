@@ -3,7 +3,7 @@ include ('fonksiyon.php');
 include 'header.php';
 
 $gelenid=$_GET["kid"];
-echo $gelenid;
+
 
 /*
 $host="localhost";
@@ -70,12 +70,12 @@ while ($al=mysqli_fetch_assoc($sec)) {
 	<h1>Kurum Güncelle</h1>
   <div class="container">
     <div class="row">
-      <div class="col-4 bg-light">
+      <div class="col-4 bg-light pt-3">
 
 	<div class="input-group mb-3">
 
 		<span class="input-group-text">kurum adını giriniz:</span>
-    	<input type="text" class="form-control" value="<?= $aladi?>"  name="gadi" maxlength="250">
+    	<input type="text" class="form-control" value="<?= $aladi?>" required name="gadi" maxlength="250">
   	</div>
   	<div class="input-group mb-3">
   		<span class="input-group-text">kurum adresini giriniz:</span>
@@ -96,7 +96,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
       <input type="text" class="form-control" value="<?= $alaciklama?>"  name="gaciklama" maxlength="250">
     </div>
 </div>
-<div class="col-4 bg-light">
+<div class="col-4 bg-light pt-3">
 
     <div class="input-group mb-3">
       <span class="input-group-text">ilgili:</span>
@@ -152,7 +152,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
 
 </div>
 
-<div class="col-4 bg-light">
+<div class="col-4 bg-light pt-3">
 
 
     <div class="input-group mb-3">

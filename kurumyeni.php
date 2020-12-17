@@ -42,12 +42,12 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
   <h1>Kurum Ekle</h1>
   <div class="container">
     <div class="row">
-      <div class="col-4 bg-info">
+      <div class="col-4 bg-info pt-3">
 
 	<div class="input-group mb-3">
 
 		<span class="input-group-text">kurum adını giriniz:</span>
-    	<input type="text" class="form-control" placeholder="adı" name="adi" maxlength="250">
+    	<input type="text" class="form-control" placeholder="adı" required name="adi" maxlength="250">
   	</div>
   	<div class="input-group mb-3">
   		<span class="input-group-text">kurum adresini giriniz:</span>
@@ -57,7 +57,7 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
   		<div class="input-group mb-3">
 
 		<span class="input-group-text">kurum telefonu giriniz:</span>
-    	<input type="text" class="form-control" placeholder="telefon" name="telefon" required maxlength="11" minlength="10">
+    	<input type="text" class="form-control" placeholder="telefon" name="telefon"  maxlength="11" minlength="10">
   	</div>
   	<div class="input-group mb-3">
   		<span class="input-group-text">kurum vergi no giriniz:</span>
@@ -68,7 +68,7 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
       <input type="text" class="form-control" placeholder="açiklama" name="aciklama" maxlength="250">
     </div>
 </div>
-<div class="col-4 bg-info">
+<div class="col-4 bg-info pt-3">
 
     <div class="input-group mb-3">
       <span class="input-group-text">ilgili:</span>
@@ -124,7 +124,7 @@ if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
 
 </div>
 
-<div class="col-4 bg-info">
+<div class="col-4 bg-info pt-3">
 
 
     <div class="input-group mb-3">

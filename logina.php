@@ -27,7 +27,8 @@ if ($count==1) {
     $_SESSION['sessifre'] = $sifre;
 	@header("location:kullanici.php"); //sayfaya götürür
 }else{
-	echo "şifre ya da kullanıcı adı hatalı";
+	$_SESSION['hata6'] = "hata";
+  @header("location:login.php");
 }
 	
 

@@ -3,7 +3,7 @@ include ('fonksiyon.php');
 include "header.php";
 
 $gelenid=$_GET["id"];
-echo $gelenid;
+
 
 
 
@@ -49,11 +49,11 @@ while ($al=mysqli_fetch_assoc($sec)) {
 	<div class="input-group mb-3">
 
 		<span class="input-group-text">müşteri adını giriniz:</span>
-    	<input type="text" class="form-control" value="<?= $aladi?>"  name="gadi">
+    	<input type="text" class="form-control" value="<?= $aladi?>"  name="gadi" required>
   	</div>
   	<div class="input-group mb-3">
   		<span class="input-group-text">müşteri soyadını giriniz:</span>
-  		<input type="text" class="form-control" value="<?= $alsoyadi?>"  name="gsoyadi">
+  		<input type="text" class="form-control" value="<?= $alsoyadi?>"  name="gsoyadi" required>
   	</div>
 
   		<div class="input-group mb-3">

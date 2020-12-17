@@ -1,11 +1,21 @@
 <?php include "header.php";
-
-
+include 'fonksiyon.php';
+session_start();
+if (isset($_SESSION['hata6'])) {
+  $at="şifre yada kullanıcı adı hatalı.";
+ uyari($at);
+}
+unset($_SESSION['hata6']);
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+
+	    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel = "stylesheet" href = "css / animate.css">
 	
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,12 +27,17 @@
 </head>
 <body>
 
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-
 	
 
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-	<div style="margin: 0 auto; margin-top: 150px; width: 300px; height: 300px;" >
+	 <script src = "js / wow.min.js"> </script>
+              <script>
+              yeni WOW (). init ();
+              </script>
+
+
+	<div class="wow slideInDown" style="margin: 0 auto; margin-top: 150px; width: 300px; height: 300px;" >
 		<form method="post" action="logina.php">
 
 

@@ -13,7 +13,7 @@ $sec =mysqli_query(connect(),"select * from sehir");
 	<div  class="container input-group mb-3">
 
 		<span class="input-group-text">sehir adını giriniz:</span>
-    	<input type="text" class="form-control" placeholder="Şehir Ekle" name="sehir">
+    	<input type="text" class="form-control" placeholder="Şehir Ekle" name="sehir" required>
   	</div>
   	
 		

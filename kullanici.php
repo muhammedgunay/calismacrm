@@ -1,5 +1,7 @@
 
-<?php include "header.php";?>
+<?php include "header.php";
+
+?>
 
 
 <?php
@@ -25,24 +27,6 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
 </head>
 <body>
 
-<!--
-<?php 
-while ($al=mysqli_fetch_assoc($sec)) {
-
-  $alid=$al["id"];
-  $aladi=$al["adi"];
-  $alsoyadi=$al["soyadi"];
-  $altel=$al["telefon"];
-  $aladres=$al["adres"];
-  $alkurumid=$al["k_adi"];
-
-  # code...?>
-
-
-
-<?php }?>
-
--->
 
 <table class="table table-hover">
   <thead>
@@ -53,8 +37,8 @@ while ($al=mysqli_fetch_assoc($sec)) {
       <th scope="col" class="table-info">telefon</th>
       <th scope="col" class="table-info">adres</th>
       <th scope="col" class="table-info">kurum</th>
-     
-        <th scope="col" class="table-info">
+
+      <th scope="col" class="table-info">
         <form method="post" action="yenikayit.php">
           <div class="input-group mb-3">
 
@@ -66,30 +50,33 @@ while ($al=mysqli_fetch_assoc($sec)) {
   </thead>
   <tbody>
 
-<?php 
-          $listcomp= mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kurum_id=kurum.kid");
-          while($asssocWhile=mysqli_fetch_assoc($listcomp)){
-              $alid=$asssocWhile["id"];
-            
-           ?> 
-           <tr>
-      <th scope="row" class="table-warning"><?php echo  $asssocWhile['id']; ?></th>
-  
-      <td class="table-warning"><?php echo  $asssocWhile['adi']; ?></td>
-      <td class="table-warning"><?php echo  $asssocWhile['soyadi']; ?></td>
-      <td class="table-warning"><?php echo  $asssocWhile['ktelefon']; ?></td>
-      <td class="table-warning"><?php echo  $asssocWhile['adres']; ?></td>
-      <td class="table-warning"><?php echo  $asssocWhile['k_adi']; ?></td>
-      <td class="table-warning">  <a href="kguncelle.php?id=<?=$alid?>" class="btn btn-warning rounded-pill" role="submit" aria-pressed="true">
-      güncelle</a>
-       <a href="ksil.php?id=<?=$alid?>" class="btn btn-danger rounded-pill" role="submit" aria-pressed="true">
-      sil</a>
-        <a href="bilgilistele.php?id=<?=$alid?>" class="btn btn-danger rounded-pill" role="submit" aria-pressed="true">
-      bilgiler</a>
-      </td>
-          
+    <?php 
+    $listcomp= mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kurum_id=kurum.kid");
+    while($asssocWhile=mysqli_fetch_assoc($listcomp)){
+      $alid=$asssocWhile["id"];
+
+      ?> 
+      <tr>
+        <th scope="row" class="table-warning"><?php echo  $asssocWhile['id']; ?></th>
+
+        <td class="table-warning"><?php echo  $asssocWhile['adi']; ?></td>
+        <td class="table-warning"><?php echo  $asssocWhile['soyadi']; ?></td>
+        <td class="table-warning"><?php echo  $asssocWhile['ktelefon']; ?></td>
+        <td class="table-warning"><?php echo  $asssocWhile['adres']; ?></td>
+        <td class="table-warning"><?php echo  $asssocWhile['k_adi']; ?></td>
+        <td class="table-warning">  
+
+          <a href="kguncelle.php?id=<?=$alid?>" class="btn btn-warning rounded-pill" role="submit" aria-pressed="true">
+          güncelle</a>
+          <a href="ksil.php?id=<?=$alid?>" class="btn btn-danger rounded-pill" role="submit" aria-pressed="true">
+          sil</a>
+
+          <a href="bilgilistele.php?id=<?=$alid?>" class="btn btn-success rounded-pill" role="submit" aria-pressed="true">
+          bilgiler</a>
+        </td>
+
         
-           <?php }?> 
+      <?php }?> 
 
 
 
@@ -103,4 +90,4 @@ while ($al=mysqli_fetch_assoc($sec)) {
 </html>
 
 
-
+<?php include 'footer.php'; ?> 

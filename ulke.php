@@ -12,8 +12,8 @@ $sec =mysqli_query(connect(),"select * from ulke");
 
 	<div class="input-group mb-3">
 
-		<span class="input-group-text">sehir adını giriniz:</span>
-    	<input type="text" class="form-control" placeholder="Ülke Ekle" name="ulke">
+		<span class="input-group-text">ülke adını giriniz:</span>
+    	<input type="text" class="form-control" placeholder="Ülke Ekle" name="ulke" required>
   	</div>
   	
   		

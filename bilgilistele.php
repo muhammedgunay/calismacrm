@@ -41,7 +41,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
         <div class="row">
             <div class="col-md-4">
                 <div class="profile-img">
-                    <img src="image/<?php echo $alname ?>" alt=""/>
+                    <img  src="image/<?php echo $alname ?>"  alt="" width="150" height="200" />
 
                 </div>
             </div>

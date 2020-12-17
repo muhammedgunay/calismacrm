@@ -2,20 +2,6 @@
 
 <?php
 
-function topla($sayi1,$sayi2){
-
-	$sonuc=$sayi1+$sayi2;
-	echo "toplama sonucu ". $sonuc."<br>";
-
-}
-
-
-
-function carp($deger1,$deger2){
-	$sonuc=$deger2*$deger1;
-	echo "carpım sonucu ".$sonuc;
-}
-
 
 
 function connect(){
@@ -36,4 +22,10 @@ function dd($dd){
 function d($dd){
 	return print_r($dd);
 }
+
+function uyari($at){
+echo "<script type='text/javascript'>  alert('$at');  </script>";
+}
+
+
 ?>
