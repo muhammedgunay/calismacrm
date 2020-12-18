@@ -36,14 +36,14 @@ $kurum=$_POST["kurum"];
 
 if (file_exists($target_file)) {
   $_SESSION['hata'] = "hata";
-  @header("location:yenikayit.php");
+  @header("location:kullanici.php");
   $uploadOk = 0;
 }
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
 $_SESSION['hata2'] = "hata";
-  @header("location:yenikayit.php");
+  @header("location:kullanici.php");
 $uploadOk = 0;
 }
 
@@ -51,14 +51,14 @@ $uploadOk = 0;
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif"  ) {
 $_SESSION['hata3'] = "hata";
-  @header("location:yenikayit.php");
+  @header("location:kullanici.php");
   $uploadOk = 0;
 }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
 $_SESSION['hata4'] = "hata";
-  @header("location:yenikayit.php");
+  @header("location:kullanici.php");
 // if everything is ok, try to upload file
 } else {
   if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
