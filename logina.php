@@ -23,14 +23,14 @@ $count=mysqli_num_rows($giris);
 
 if ($count==1) {
 	// session_register("kullaniciadi");
-    $_SESSION['seskullanici'] = $kullaniciadi;
-    $_SESSION['sessifre'] = $sifre;
+	$_SESSION['seskullanici'] = $kullaniciadi;
+	$_SESSION['sessifre'] = $sifre;
 	@header("location:kullanici.php"); //sayfaya götürür
 }else{
 	$_SESSION['hata6'] = "hata";
-  @header("location:login.php");
+	@header("location:login.php");
 }
-	
+
 
 
 

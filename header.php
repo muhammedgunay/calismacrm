@@ -51,7 +51,7 @@
 
       <!-- Logo -->
       <div class="header-left">
-        <a href="index.html" class="logo">
+        <a href="kullanici.php" class="logo">
           <img src="assets/img/navbaricon.JPG" alt="Logo" class="sidebar-logo mt-3">
           <img src="assets/img/navbaricon.JPG" alt="Logo" class="mini-sidebar-logo mt-3">
         </a>
@@ -97,14 +97,14 @@
 
         <li class="nav-item dropdown has-arrow main-drop">
           <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-            <span class="user-img"><img src="assets/img/profiles/avatar-21.jpg" alt="">
+            <span class="user-img"><img src="image/images.png" alt="">
 
               <span>Admin</span>
             </span></a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="profile.html">My Profile</a>
-              <a class="dropdown-item" href="settings.html">Settings</a>
-              <a class="dropdown-item" href="login.html">Logout</a>
+           
+              <!--<a class="dropdown-item" href="settings.html">Settings</a> -->
+              <a class="dropdown-item" href="cikisyap.php">Çıkış Yap</a>
             </div>
           </li>
         </ul>
@@ -114,9 +114,9 @@
         <div class="dropdown mobile-user-menu">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="profile.html">My Profile</a>
+            
             <a class="dropdown-item" href="settings.html">Settings</a>
-            <a class="dropdown-item" href="login.html">Logout</a>
+            <a class="dropdown-item" href="cikisyap.php">Çıkış Yap</a>
           </div>
         </div>
         <!-- /Mobile Menu -->
@@ -135,7 +135,7 @@
             <ul>
 
               <li class="menu-title"> 
-                <span>Main</span>
+                <span>Menü</span>
               </li>
               <!--
               <li class="submenu">
@@ -149,84 +149,27 @@
             -->
 
             <li> 
-              <a href="kullanici.php"><i class="fa fa-building-o" aria-hidden="true"></i> <span>Müşteriler</span></a>
+              <a href="kullanici.php"><i class="fa fa-address-book-o" aria-hidden="true"></i> <span>Müşteriler</span></a>
             </li>
             
             <li> 
-              <a href="kullanici.php"><i class="fa fa-building-o" aria-hidden="true"></i> <span>Firmalar</span></a>
+              <a href="kurum.php"><i class="fa fa-building-o" aria-hidden="true"></i> <span>Firmalar</span></a>
             </li>
             
             
             <li class="menu-title"> 
-              <span>Pages</span>
+              <span>Sayfalar</span>
             </li>
             
             <li class="submenu">
-              <a href="#"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> <span> Error Pages </span> <span class="menu-arrow"></span></a>
+              <a href="#"><i class="fa fa-columns" aria-hidden="true"></i> <span> Şehir Ülke </span> <span class="menu-arrow"></span></a>
               <ul class="sub-menus">
-                <li><a href="error-404.html">404 Error </a></li>
-                <li><a href="error-500.html">500 Error </a></li>
+                <li><a href="ulke.php">Ülkeler </a></li>
+                <li><a href="sehir.php">Şehirler </a></li>
               </ul>
             </li>
             
-            <li class="submenu">
-              <a href="#"><i class="fa fa-columns" aria-hidden="true"></i> <span> Pages </span> <span class="menu-arrow"></span></a>
-              <ul class="sub-menus">
-                <li><a href="faq.html"> FAQ </a></li>
-                <li><a href="terms.html"> Terms </a></li>
-                <li><a href="privacy-policy.html"> Privacy Policy </a></li>
-                <li><a href="blank-page.html"> Blank Page </a></li>
-              </ul>
-            </li>
-            <li class="menu-title"> 
-              <span>UI Interface</span>
-            </li>
-            <li> 
-              <a href="components.html"><i class="fa fa-puzzle-piece" aria-hidden="true"></i> <span>Components</span></a>
-            </li>
-            <li class="submenu">
-              <a href="#"><i class="fa fa-object-ungroup" aria-hidden="true"></i> <span> Forms </span> <span class="menu-arrow"></span></a>
-              <ul class="sub-menus">
-                <li><a href="form-basic-inputs.html">Basic Inputs </a></li>
-                <li><a href="form-input-groups.html">Input Groups </a></li>
-                <li><a href="form-horizontal.html">Horizontal Form </a></li>
-                <li><a href="form-vertical.html"> Vertical Form </a></li>
-                <li><a href="form-mask.html"> Form Mask </a></li>
-                <li><a href="form-validation.html"> Form Validation </a></li>
-              </ul>
-            </li>
-            <li class="submenu">
-              <a href="#"><i class="fa fa-table" aria-hidden="true"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
-              <ul class="sub-menus">
-                <li><a href="tables-basic.html">Basic Tables </a></li>
-                <li><a href="data-tables.html">Data Table </a></li>
-              </ul>
-            </li>
-            <li class="menu-title"> 
-              <span>Extras</span>
-            </li>
-            
-            
-            <li class="submenu">
-              <a href="javascript:void(0);"><i class="fa fa-retweet" aria-hidden="true"></i> <span>Multi Level</span> <span class="menu-arrow"></span></a>
-              <ul class="sub-menus">
-                <li class="submenu">
-                  <a href="javascript:void(0);"> <span>Level 1</span> <span class="menu-arrow"></span></a>
-                  <ul class="sub-menus">
-                    <li><a href="javascript:void(0);"><span>Level 2</span></a></li>
-                    <li class="submenu">
-                      <a href="javascript:void(0);"> <span> Level 2</span> <span class="menu-arrow"></span></a>
-                      <ul class="sub-menus">
-                        <li><a href="javascript:void(0);">Level 3</a></li>
-                        <li><a href="javascript:void(0);">Level 3</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="javascript:void(0);"> <span>Level 2</span></a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="javascript:void(0);"> <span>Level 1</span></a>
-                </li>
+           
               </ul>
             </li>
           </ul>

@@ -1,4 +1,8 @@
 <?php
+session_start();
+if (!isset($_SESSION['seskullanici']) && !isset($_SESSION['sessifre'])) {
+  @header("location:login.php");
+}
 include ('fonksiyon.php');
 include "header.php";
 
@@ -29,27 +33,13 @@ $sayi=mysqli_fetch_assoc($liste);
  //d($sayi);
 ?>
 
-<style type="text/css">
-	h1{
-		
-		text-shadow: rgba(155,155,155) 15px 15px 15px;
-		display: -webkit-box;
-		-webkit-box-pack:center;
-		
-	}
-</style>
+
 
 <div class="page-wrapper">
 	<div class="container">
 
 
-
-
-
-
-
-
-		<form method="get" action="guncellemeonay.php" enctype="multipart/form-data">
+		<form method="post" action="guncellemeonay.php" enctype="multipart/form-data">
 			<h3>İsim</h3>
 			<div class="form-group row">
 				<div class="col-md-12"><label class="col-form-label">Adı Soyadı <span class="text-danger">*</span></label></div>
@@ -66,7 +56,7 @@ $sayi=mysqli_fetch_assoc($liste);
 					<label class="col-form-label">Firma</label>
 
 
-					<select name="gkurum"> <!-- s elect name si ile çağrılır optıonslar ise value ile aktalırılır.-->
+					<select class="form-control" name="gkurum"> <!-- s elect name si ile çağrılır optıonslar ise value ile aktalırılır.-->
 						<?php 
 						$listcomp= mysqli_query(connect(),"SELECT kid,k_adi from kurum");
 						while($asssocWhile=mysqli_fetch_assoc($listcomp)){
@@ -90,7 +80,7 @@ $sayi=mysqli_fetch_assoc($liste);
 				<div class="col-sm-6">
 					<label class="col-form-label">Telefon</label>
 					<input type="text" class="form-control" name="gtel" placeholder="telefon"  value="<?= $altel?>" >
-					<hr>
+					<hr style="border-color: blue;">
 				</div>
 
 			</div>
@@ -100,32 +90,15 @@ $sayi=mysqli_fetch_assoc($liste);
 				<div class="col-sm-6">
 					<label class="col-form-label">Adres</label>
 					
-					<input type="text" class="form-control" name="adres" placeholder="gadres"  value="<?= $aladres?>" >
-					<hr>
+					<input type="text" class="form-control" name="gadres" placeholder="adres"  value="<?= $aladres?>" >
+					<hr style="border-color: blue;">
 				</div>
 
 			</div>
-			<div class="form-group row">
-				<div class="col-sm-6">
-					 <div class="profile-img">
-                    <img  src="image/<?php echo $alname ?>"  alt="" width="100" height="130" />
-
-                </div>
-				</div>
-
-			</div>
+			
 
 
-			<h3>Fotograf Seçin</h3>
-			<div class="form-group row">
-				<div class="col-sm-6">
-
-					<label class="col-form-label">Resimler jpg, png formatında olmadlıdır.</label>
-					<input type="file" name="fileToUpload" id="fileToUpload">
-					<hr>
-				</div>
-			</div>
-
+			
 
 			
 
@@ -134,7 +107,7 @@ $sayi=mysqli_fetch_assoc($liste);
 			<div class="text-center py-3">
 
 				<button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Güncelleme Onayla</button>&nbsp;&nbsp;
-				<button type="button" class="btn btn-secondary btn-rounded">İptal</button>
+				<a href="kullanici.php"><button type="button" class="btn btn-secondary btn-rounded">İptal</button></a>
 			</div>
 		</form>
 
@@ -142,3 +115,4 @@ $sayi=mysqli_fetch_assoc($liste);
 	</div>
 
 
+<?php include 'footer.php'; ?> 

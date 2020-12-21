@@ -2,13 +2,13 @@
 
 include 'fonksiyon.php';
 session_start();
-/*
+
 $target_dir = "image/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if ($_POST) {
-	# code...*/
+	# code...
 
 $gelenadi=$_POST["gadi"];
 $gelensoyadi=$_POST["gsoyadi"];
@@ -17,7 +17,7 @@ $gelenadres=$_POST["gadres"];
 $gelenkurum=$_POST["gkurum"];
 $gelenid2=$_POST["gid"];
 
-/*
+
 
  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   $name = $_FILES['fileToUpload']['name'];
@@ -35,7 +35,7 @@ if (file_exists($target_file)) {
   $_SESSION['hata'] = "hata";
   @header("location:kullanici.php");
   $uploadOk = 0;
-} 
+}
 
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
@@ -90,7 +90,6 @@ $_SESSION['hata5'] = "hata";
 }
 
 
-*/
 
 
 
@@ -100,6 +99,8 @@ $_SESSION['hata5'] = "hata";
 
 
 
+
+/*
 
 $guncelle=mysqli_query(connect(), "update kullanici set adi='$gelenadi',soyadi='$gelensoyadi'
 	,ktelefon='$gelentel',adres='$gelenadres',kurum_id='$gelenkurum' where id='$gelenid2'");
@@ -109,5 +110,5 @@ if ($guncelle) {
 }else  {
 	echo "güncellenemedi";
 	# code...
-} 
+} */
 ?>

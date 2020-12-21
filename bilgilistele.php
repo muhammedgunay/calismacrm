@@ -50,61 +50,66 @@ while ($al=mysqli_fetch_assoc($sec)) {
             <form method="get" action="kguncelle.php">
 
                 <input type="text" name="id" style="display: none;" value="<?php echo $alid ?>">
-            <div class="card ">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="profile-view">
-                                <div class="profile-img-wrap">
-                                    <div class="profile-img">
-                                        <a href="#"><img alt="" src="image/<?php echo $alname ?>"></a>
+                <div class="card ">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="profile-view">
+                                    <div class="profile-img-wrap">
+                                        <div class="profile-img">
+                                            <a href="#"><img alt="" src="image/<?php echo $alname ?>"></a>
+                                        </div>
+                                        <div class="pro-edit"><a data-target="#profile_info" data-toggle="modal" class="edit-icon" href="resimguncel.php?id=<?=$alid?>"><i class="fa fa-pencil"></i></a>
+
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="profile-basic">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="profile-info-left">
-                                                <h3 ><?php echo $aladi." ".$alsoyadi;  ?></h3>
+                                    <div class="profile-basic">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="profile-info-left">
+                                                    <h3 ><?php echo $aladi." ".$alsoyadi;  ?></h3>
 
 
+                                                </div>
+                                            </div>
+                                            <div class="col-md-7">
+                                                <ul class="personal-info">
+                                                    <li>
+                                                        <div class="title">Telefon:</div>
+                                                        <div class="text"><?php echo $altel;  ?></div>
+                                                        <hr>
+                                                    </li>
+                                                    <!--
+                                                    <li>
+                                                        <div class="title">Email:</div>
+                                                        <div class="text"><a href="">johndoe@example.com</a></div>
+                                                        <hr>
+                                                    </li> -->
+
+                                                    <li>
+                                                        <div class="title">Adres:</div>
+                                                        <div class="text"><?php echo $aladres;  ?></div>
+                                                        <hr>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Kurum:</div>
+                                                        <div class="text"><?php echo $alkurumid;  ?></div>
+                                                        <hr>
+                                                    </li>
+
+                                                </ul>
                                             </div>
                                         </div>
-                                        <div class="col-md-7">
-                                            <ul class="personal-info">
-                                                <li>
-                                                    <div class="title">Telefon:</div>
-                                                    <div class="text"><?php echo $altel;  ?></div>
-                                                    <hr>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Email:</div>
-                                                    <div class="text"><a href="">johndoe@example.com</a></div>
-                                                    <hr>
-                                                </li>
+                                    </div>
+                                    <div class="pro-edit"><a data-target="#profile_info" data-toggle="modal" class="edit-icon" href="kguncelle.php?id=<?=$alid?>"><i class="fa fa-pencil"></i></a>
 
-                                                <li>
-                                                    <div class="title">Adres:</div>
-                                                    <div class="text"><?php echo $aladres;  ?></div>
-                                                    <hr>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Kurum:</div>
-                                                    <div class="text"><?php echo $alkurumid;  ?></div>
-                                                    <hr>
-                                                </li>
-
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="pro-edit"><a data-target="#profile_info" data-toggle="modal" class="edit-icon" href="kguncelle.php?id=<?=$alid?>"><i class="fa fa-pencil"></i></a>
-                                   
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
 
             <?php
 
@@ -128,7 +133,7 @@ while ($al=mysqli_fetch_assoc($sec)) {
             }
             ?>
 
-            <div class="crms-title row bg-white mb-2">
+            <div class="crms-title row bg-white">
                 <div class="col  p-0">
                     <h3 class="page-title m-0">
                         <span class="page-title-icon bg-gradient-primary text-white mr-2">
@@ -137,108 +142,106 @@ while ($al=mysqli_fetch_assoc($sec)) {
                   </div>
 
               </div>
+              <div class="page-header pt-3 mb-0">
+                  <div class="card ">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="profile-view">
+                                    <div class="profile-img-wrap">
 
-              <div class="card ">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="profile-view">
-                                <div class="profile-img-wrap">
-
-                                </div>
-                                <div class="profile-basic">
-                                    <div class="row">
-                                        <div class="col-md-5">
-                                            <div class="profile-info-left">
-                                                <h3> <?php echo $aladi2;  ?></h3>
+                                    </div>
+                                    <div class="profile-basic">
+                                        <div class="row">
+                                            <div class="col-md-5">
+                                                <div class="profile-info-left">
+                                                    <h3> <?php echo $aladi2;  ?></h3>
 
 
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-md-7">
-                                            <ul class="personal-info">
-                                                <li>
-                                                    <div class="title">Telefon:</div>
-                                                    <div class="text"><?php echo $altel2;  ?></div>
-                                                    <hr>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Email:</div>
-                                                    <div class="text"><?php echo $aleposta;  ?></div>
-                                                    <hr>
-                                                </li>
+                                            <div class="col-md-7">
+                                                <ul class="personal-info">
+                                                    <li>
+                                                        <div class="title">Telefon:</div>
+                                                        <div class="text"><?php echo $altel2;  ?></div>
+                                                        <hr>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Email:</div>
+                                                        <div class="text"><?php echo $aleposta;  ?></div>
+                                                        <hr>
+                                                    </li>
 
-                                                <li>
-                                                    <div class="title">Adres:</div>
-                                                    <div class="text"><?php echo $aladres2;  ?></div>
-                                                    <hr>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Vergi No:</div>
-                                                    <div class="text"><?php echo $alvergi;  ?></div>
-                                                    <hr>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Referans Müşteri:</div>
-                                                    <div class="text"><?php echo $alreferansmusteri;  ?></div>
-                                                    <hr>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Müşteri Tipi:</div>
-                                                    <div class="text"><?php echo $almusteritipi;  ?></div>
-                                                    <hr>
-                                                </li>
+                                                    <li>
+                                                        <div class="title">Adres:</div>
+                                                        <div class="text"><?php echo $aladres2;  ?></div>
+                                                        <hr>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Vergi No:</div>
+                                                        <div class="text"><?php echo $alvergi;  ?></div>
+                                                        <hr>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Referans Müşteri:</div>
+                                                        <div class="text"><?php echo $alreferansmusteri;  ?></div>
+                                                        <hr>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Müşteri Tipi:</div>
+                                                        <div class="text"><?php echo $almusteritipi;  ?></div>
+                                                        <hr>
+                                                    </li>
 
-                                                <li>
-                                                    <div class="title">Firma Resmi Adı:</div>
-                                                    <div class="text"><?php echo $alresmiadi;  ?></div>
-                                                    <hr>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Firma Kodu:</div>
-                                                    <div class="text"><?php echo $alfirmakodu;  ?></div>
-                                                    <hr>
-                                                </li>
-                                                <li>
-                                                    <div class="title">Posta Kodu:</div>
-                                                    <div class="text"><?php echo $alpostakodu;  ?></div>
-                                                    <hr>
-                                                </li>
+                                                    <li>
+                                                        <div class="title">Firma Resmi Adı:</div>
+                                                        <div class="text"><?php echo $alresmiadi;  ?></div>
+                                                        <hr>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Firma Kodu:</div>
+                                                        <div class="text"><?php echo $alfirmakodu;  ?></div>
+                                                        <hr>
+                                                    </li>
+                                                    <li>
+                                                        <div class="title">Posta Kodu:</div>
+                                                        <div class="text"><?php echo $alpostakodu;  ?></div>
+                                                        <hr>
+                                                    </li>
 
-                                                <li>
-                                                    <div class="title">Açıklama:</div>
-                                                    <div class="text"><?php echo $alaciklama;  ?></div>
-                                                    <hr>
-                                                </li>
+                                                    <li>
+                                                        <div class="title">Açıklama:</div>
+                                                        <div class="text"><?php echo $alaciklama;  ?></div>
+                                                        <hr>
+                                                    </li>
 
 
-                                            </ul>
+                                                </ul>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+
                 </div>
 
-
-
-
-
-
             </div>
+            <!-- /Page Header -->
+
 
         </div>
-        <!-- /Page Header -->
-
+        <!-- /Page Content -->
 
     </div>
-    <!-- /Page Content -->
-
-</div>
-<!-- /Page Wrapper -->
-
-
+    <!-- /Page Wrapper -->
 
 
 

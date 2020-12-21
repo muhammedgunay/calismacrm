@@ -2,22 +2,17 @@
 
 include 'fonksiyon.php';
 session_start();
-/*
+
 $target_dir = "image/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 if ($_POST) {
-	# code...*/
+	# code...
 
-$gelenadi=$_POST["gadi"];
-$gelensoyadi=$_POST["gsoyadi"];
-$gelentel=$_POST["gtel"];
-$gelenadres=$_POST["gadres"];
-$gelenkurum=$_POST["gkurum"];
 $gelenid2=$_POST["gid"];
 
-/*
+
 
  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   $name = $_FILES['fileToUpload']['name'];
@@ -67,8 +62,7 @@ if ($_POST) {
 	# code...
 
 $sildosya=mysqli_query(connect(),"select name from kullanici where id='$gelenid2'");
-$guncelle=mysqli_query(connect(), "update kullanici set adi='$gelenadi',soyadi='$gelensoyadi'
-	,ktelefon='$gelentel',adres='$gelenadres',kurum_id='$gelenkurum',name='$name' where id='$gelenid2'");
+$guncelle=mysqli_query(connect(), "update kullanici set name='$name' where id='$gelenid2'");
 }
 if ($guncelle) {
   while($sec=mysqli_fetch_assoc($sildosya)){
@@ -90,7 +84,6 @@ $_SESSION['hata5'] = "hata";
 }
 
 
-*/
 
 
 
@@ -101,13 +94,6 @@ $_SESSION['hata5'] = "hata";
 
 
 
-$guncelle=mysqli_query(connect(), "update kullanici set adi='$gelenadi',soyadi='$gelensoyadi'
-	,ktelefon='$gelentel',adres='$gelenadres',kurum_id='$gelenkurum' where id='$gelenid2'");
-if ($guncelle) {
-	echo "başarılı";
-	@header("location:kullanici.php");
-}else  {
-	echo "güncellenemedi";
-	# code...
-} 
+
+ 
 ?>

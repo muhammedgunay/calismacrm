@@ -10,19 +10,19 @@ if (isset($_SESSION['hata'])) {
   $at="Üzgünüz, dosya zaten var.";
  uyari($at);
 }
-if (isset($_SESSION['hata2'])) {
+elseif (isset($_SESSION['hata2'])) {
   $at="Üzgünüz, dosyanız çok büyük.";
  uyari($at);
 }
-if (isset($_SESSION['hata3'])) {
+elseif (isset($_SESSION['hata3'])) {
   $at="Üzgünüz, sadece JPG, JPEG, PNG ve GIF dosyalarına izin verilmektedir.";
  uyari($at);
 }
-if (isset($_SESSION['hata4'])) {
+elseif (isset($_SESSION['hata4'])) {
   $at="Üzgünüz, dosyanız yüklenmedi.";
  uyari($at);
 }
-if (isset($_SESSION['hata5'])) {
+elseif (isset($_SESSION['hata5'])) {
   $at="Üzgünüz, dosyanızı yüklerken bir hata oluştu.";
  uyari($at);
 }
@@ -105,7 +105,7 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
                     <tr>
 
                       <td>
-                        <a href="" class="avatar"><img alt="" src=" image/<?php echo  $asssocWhile['name']; ?>"></a>
+                        <a  class="avatar"><img alt="" src=" image/<?php echo  $asssocWhile['name']; ?>"></a>
                         <a > <?php echo  $asssocWhile['adi']." ". $asssocWhile['soyadi']; ?></a>
                       </td>
                       <td><?php echo  $asssocWhile['ktelefon']; ?>  </td>
@@ -119,7 +119,7 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
                         <a href="ksil.php?id=<?=$alid?>" class="btn btn-danger rounded-pill" role="submit" aria-pressed="true">
                         sil</a>
 
-                        <a href="bilgilistele.php?id=<?=$alid?>" class="btn btn-success rounded-pill" role="submit" aria-pressed="true">
+                        <a href="bilgilistele.php?id=<?=$alid?>" class="add btn btn-gradient-primary font-weight-bold text-white todo-list-add-btn btn-rounded"  role="submit" aria-pressed="true">
                         bilgiler</a>
                       </td> 
 
@@ -172,10 +172,10 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
                 <div class="col-md-12"><label class="col-form-label">Adı Soyadı <span class="text-danger">*</span></label></div>
 
                 <div class="col-md-4">
-                  <input class="form-control" type="text" placeholder="Adı" name="adi">
+                  <input class="form-control" type="text" placeholder="Adı" name="adi" required="" maxlength="45">
                 </div>
                 <div class="col-md-4">
-                  <input class="form-control" type="text" placeholder="Soyadı" name="soyadi">
+                  <input class="form-control" type="text" placeholder="Soyadı" name="soyadi" required=""  maxlength="45">
                 </div>
               </div>
               <div class="form-group row">
@@ -183,7 +183,7 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
                   <label class="col-form-label">Firma</label>
                   
 
-                  <select name="kurum"> <!-- s elect name si ile çağrılır optıonslar ise value ile aktalırılır.-->
+                  <select class="form-control" name="kurum"> <!-- s elect name si ile çağrılır optıonslar ise value ile aktalırılır.-->
                     <?php 
                     $listcomp= mysqli_query(connect(),"SELECT kid,k_adi from kurum");
                     while($asssocWhile=mysqli_fetch_assoc($listcomp)){
@@ -204,7 +204,7 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
               <div class="form-group row">
                 <div class="col-sm-6">
                   <label class="col-form-label">Telefon</label>
-                  <input type="text" class="form-control" name="telefon" placeholder="telefon">
+                  <input type="text" class="form-control" name="telefon" placeholder="telefon" maxlength="10" minlength="10">
                 </div>
 
               </div>
@@ -213,7 +213,7 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
               <div class="form-group row">
                 <div class="col-sm-6">
                   <label class="col-form-label">Adres</label>
-                  <textarea class="form-control" rows="3" name="adres" placeholder="adres"></textarea>
+                  <textarea class="form-control" rows="3" name="adres" placeholder="adres"  maxlength="250"></textarea>
                 </div>
               </div>
 
@@ -230,7 +230,7 @@ $sec =mysqli_query(connect(),"select * from kullanici,kurum where kullanici.kuru
               <div class="text-center py-3">
 
                 <button type="submit" class="border-0 btn btn-primary btn-gradient-primary btn-rounded">Kaydet</button>&nbsp;&nbsp;
-                <button type="button" class="btn btn-secondary btn-rounded">İptal</button>
+                <a href="kullanici.php"><button type="button" class="btn btn-secondary btn-rounded">İptal</button></a>
               </div>
             </form>
           </div>

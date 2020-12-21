@@ -37,5 +37,7 @@ $ekle=mysqli_query(connect(),"insert into kurum (k_adi,adresi,telefon,vergino,ac
 if ($ekle) {
 	echo "başarılı";
 	@header("location:kurum.php");
+}else{
+	echo "başarısız ";
 }
 ?>
