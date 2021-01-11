@@ -1,6 +1,7 @@
 <?php
 include ('fonksiyon.php');
 include "header.php";
+//branch test
 
 $gelenid=$_GET["id"];
 echo $gelenid;
